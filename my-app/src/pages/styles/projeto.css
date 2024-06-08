@@ -1,0 +1,6 @@
+.projeto{
+    background-color: beige;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}

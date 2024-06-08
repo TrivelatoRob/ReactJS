@@ -1,9 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header'
+import Footer from './components/footer'
+import Pecas from './pages/pecas'
 
 function App() {
   return (
     <div className="App">
+     
+     <Pecas />
      
     </div>
   );

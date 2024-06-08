@@ -1,0 +1,12 @@
+.grid{
+   display: flex;
+   flex-flow: row;
+   width: fit-content;
+   height: fit-content;
+   align-items: center;
+   justify-content: center;
+}
+
+.lista{
+    list-style: none;
+}
