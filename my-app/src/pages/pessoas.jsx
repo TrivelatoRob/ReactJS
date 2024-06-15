@@ -2,12 +2,12 @@ import React from "react";
 import './styles/pessoas.css'
 
 
-function Pessoas(pessoas){
+function Pessoas({pessoas}){
     
     return (
         pessoas.map((element) =>{
-            return (<div className="grid">
-                <ul className="lista">
+            return (<div className="lista">
+                <ul>
                 <li>Nome: {element['nome']}</li>
                 <li>Sobrenome: {element['sobrenome']}</li>
                 <li>Idade: {element['idade']}</li>

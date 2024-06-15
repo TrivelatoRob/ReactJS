@@ -1,14 +1,26 @@
 import './App.css';
-import Projeto from './pages/projeto'
+import { UserProvider } from './context/userContext';
+import Main from './pages/main'
+
 
 function App() {
   return (
     <div className="App">
      
-     <Projeto />
+     <Main />
      
     </div>
   );
 }
 
-export default App;
+function AppWrapper(){
+  return(
+    <UserProvider>
+      <App />
+    </UserProvider>
+  )
+  
+}
+
+export default AppWrapper
+

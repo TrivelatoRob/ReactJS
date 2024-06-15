@@ -1,12 +1,12 @@
-.grid{
+.lista{
    display: flex;
-   flex-flow: row;
-   width: fit-content;
-   height: fit-content;
+   flex-direction: column;
+   flex-wrap: wrap;
    align-items: center;
    justify-content: center;
+   width: fit-content;
+   height: fit-content;
+
 }
 
-.lista{
-    list-style: none;
-}
+
