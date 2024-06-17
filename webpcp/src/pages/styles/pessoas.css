@@ -1,0 +1,12 @@
+.lista{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   width: fit-content;
+   height: fit-content;
+
+}
+
+

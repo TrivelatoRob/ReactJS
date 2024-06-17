@@ -1,0 +1,7 @@
+.header {
+    background-color: rgba(0, 128, 0, 0.692);
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
