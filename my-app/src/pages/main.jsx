@@ -1,37 +1,39 @@
-import React, { useEffect, useContext} from 'react'
-import Perfil from '../components/perfil'
+import React, { useEffect, useContext } from 'react'
 import './styles/main.css'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import Pessoas from '../components/pessoas'
 import { UserContext } from '../context/userContext'
-import Pessoas from './pessoas'
+import Profile from './profile'
+import ExemploComponente from './exemploComponente'
 
+function Main() {
+	const {pessoas, setPessoas} = useContext(UserContext)
 
-function Main(){
-    const {pessoas, setPessoas} = useContext(UserContext)
-
-    useEffect(() => { 
+	useEffect(() => { 
 		const fetchUsers = async () => {
-			const response = await fetch('/pessoas.json');
+			const response = await fetch('/pessoas.json')
 				const data = await response.json();
-				console.log(data)
 			  	setPessoas(data);
 		  };
 		fetchUsers();
 		}, [])
 
-    
+		
 
-    return(
-
-        <div>
-            <div className='main-content'>
-                <div>
-                <h3>Teste de Perfil</h3>
-                <Perfil nome={'Roberto'} sobrenome={'Trivelato'} idade={'36'} />
-                <Pessoas pessoas={pessoas} />
-                </div>
-            </div>
-        </div>
-    )
+	return(
+		<div>
+			<Header/>
+			<div className='main-content'>
+				<h1>Some stuff</h1>
+				<ExemploComponente idade={17} />
+				<Profile name={'Thiago'} lastname={'Oshiro'} idade={24} />
+				<Pessoas pessoas={pessoas} />
+				<Footer/>
+			</div>
+		</div>
+	)
 }
 
-export default Main
+
+export default  Main 

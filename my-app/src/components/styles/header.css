@@ -1,7 +1,23 @@
-.header {
-    background-color: rgba(0, 128, 0, 0.692);
-    height: 10vh;
+nav {
+    background-color: darkcyan;
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    position: fixed;
+    padding: 8px;
+    left: 0;
+    top: 0;
+}
+
+.login-field {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    gap: 8px
+}
+
+.login-field p {
+    font-size: large;
+    font-weight: bold;
 }

@@ -1,6 +1,7 @@
-.main-content{
-    margin-left: 20px;
+.main-content {
     display: flex;
     flex-direction: column;
-
-} 
+    margin-top: 90px;
+    justify-content: center;
+    align-items: center;
+}

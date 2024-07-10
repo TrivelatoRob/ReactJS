@@ -1,13 +1,12 @@
-import React from 'react';
-import './styles/footer.css'
+import React from 'react'
 
-
-function Footer(){
-    return(
-        <div className='footer'>
-            <h3>Desenvolvido por Roberto Trivelato Junior</h3>
-        </div>
+function Footer() {
+	return(
+			<div>
+				<p>Oshiro 2024</p>
+			</div>
     )
 }
+
 
 export default Footer
