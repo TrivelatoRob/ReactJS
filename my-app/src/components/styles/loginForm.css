@@ -1,0 +1,9 @@
+*{
+    list-style: none;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+
+}

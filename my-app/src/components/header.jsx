@@ -6,9 +6,8 @@ function Header() {
 		<nav>
 			<img src='favicon.ico' alt="some stuff"/>
 			<div className='login-field'>
-				<p>Login:</p>
-				<input placeholder='Email'></input>
-				<input placeholder='Senha'></input>
+				<p>Home</p>
+				
 			</div>
 		</nav>
 	)
