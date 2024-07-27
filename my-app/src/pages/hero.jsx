@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import DailyRecipe from '../components/dailyRecipe'
 import { UserContext } from '../context/userContext'
 import HeroInputField from '../components/heroInputField'
+import ShowRecipes from '../components/showRecipes'
 
 
 
@@ -26,6 +27,8 @@ function Hero() {
             <DailyRecipe />
 
             <HeroInputField />
+
+            <ShowRecipes />
 
             
             

@@ -4,11 +4,13 @@ import { UserContext } from "../context/userContext";
 function HeroInputField() {
   const [options, setOptions] = useState("");
   const [selection, setSelection] = useState("");
-  const { receitas, setReceitas } = useContext(UserContext)
+  const { setReceitas } = useContext(UserContext);
+  
+  
 
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchOptions = async () => {
       const response = await fetch(
         "https://www.themealdb.com/api/json/v1/1/list.php?c=list"
       );
@@ -19,36 +21,39 @@ function HeroInputField() {
         setOptions(data.meals);
       }
     };
-    fetchCategories();
+    fetchOptions();
   }, []);
 
-  const handleSelection = (event) => {
-    let selecao = event.value;
-    //let escolhido = selecao.filter((element) => element.selected)
-    setSelection(selecao);
-  };
+    const handleSelection = (event) => {
+      const { target } = event
+      setSelection(target.value);
+      };
   
-  const fetchCategories = async () => {
-    const response = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/list.php?c=${selection}`
-    );
-    const data = await response.json();
-    if (data && data.meals) {
-        setReceitas(data.meals)
-    }
-  };
+    const fetchRecipes = async () => {
+      console.log(selection);
+      const response = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${selection}`
+      );
+      const data = await response.json();
+      console.log(data);
+      if (data && data.meals) {
+          setReceitas(data.meals);
+      }
+    };
+    
+    
+          
+      
 
 
 
   return (
     <div>
       <h2>Ou procure uma nova receita:</h2>
-      <label>Categorias</label>
+      <label>Por Categorias:</label>
       <br />
       <select
-        onChange={({ event }) => handleSelection(event)}
-        value={selection}
-      >
+        onChange={( event ) => handleSelection(event)}>
         <option disabled={selection}>Selecione uma categoria</option>
         {options.length > 0 ? (
           options.map((element) => <option>{element.strCategory}</option>)
@@ -56,14 +61,9 @@ function HeroInputField() {
           <option>Erro!</option>
         )}
       </select>
-      <button disabled={!selection} onClick={fetchCategories}>Pesquisar</button>
-      <ul>
-      {receitas.length > 0 ? (
-          receitas.map((element) => <li>{element.strMeal}</li>)): (
-            <li>Erro</li>
-          )}
-      </ul>
-
+      <button disabled={!selection} onClick={fetchRecipes}>Pesquisar</button>
+      <br />
+      <br />
     </div>
   );
 }

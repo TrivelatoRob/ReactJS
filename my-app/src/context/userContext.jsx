@@ -6,8 +6,10 @@ const UserContext = createContext(null);
 const UserProvider = ({ children }) => {
   const [pessoas, setPessoas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState('')
-  const [receitas, setReceitas] = useState('')
+  const [user, setUser] = useState('');
+  const [receitas, setReceitas] = useState(null);
+  const [filtro, setFiltro] = useState('')
+
 
 
   const values = { 
@@ -18,8 +20,10 @@ const UserProvider = ({ children }) => {
     user,
     setUser,
     receitas,
-    setReceitas
-  }
+    setReceitas,
+    filtro,
+    setFiltro,
+    }
 
   return (
     <UserContext.Provider value={values}>
