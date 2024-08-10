@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState('');
   const [receitas, setReceitas] = useState(null);
   const [filtro, setFiltro] = useState('')
+  const [recipeInfo, setRecipeInfo] = useState()
 
 
 
@@ -23,6 +24,8 @@ const UserProvider = ({ children }) => {
     setReceitas,
     filtro,
     setFiltro,
+    recipeInfo,
+    setRecipeInfo,
     }
 
   return (
