@@ -25,20 +25,15 @@ function ShowRecipes () {
           }
       }
 
-      
-
-
-
-
 	return(
         <div>
           <label>Ou Por Ingrediente:</label><br />     
         <input type="text" placeholder="Filtrar..." onChange={( event ) => handleFiltrar(event)}/>
         <button disabled={!filtro} onClick={handleListar}>Pesquisar</button>
         <div className='cardContainer'>
-		{ receitaFiltrada ? receitaFiltrada.map((element) => (
+		{ receitas ? receitas.map((element) => (
             <RecipeReviewCard id={element.idMeal} title={element.strMeal} image={element.strMealThumb} />
-        )): receitas && receitas.map((element) => (
+        )): receitaFiltrada && receitaFiltrada.map((element) => (
             <RecipeReviewCard id= {element.idMeal} title={element.strMeal} image={element.strMealThumb} />
         ))}
         </div>
