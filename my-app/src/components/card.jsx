@@ -61,7 +61,7 @@ export default function RecipeReviewCard({id, title, image}) {
 
 const getRecipeById = async (id) => {
     try {
-      const response = await fetch(`http://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+      const response = await axios.get(`http://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
 		console.log(response.data)
 	  return response.data.meals;
     } catch (error) {
